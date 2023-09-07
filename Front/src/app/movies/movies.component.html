@@ -1,0 +1,38 @@
+<div id = "bg"></div>
+
+<div id = "body">
+
+    <div id = "container">
+
+        <div id = "navbar">
+
+            <app-navbar></app-navbar>
+    
+        </div>
+    
+        <div id = "content" class = "m-2 h-75">
+    
+            <h3>Our Selection</h3>
+    
+            <div id="movies" *ngFor="let f of paginatedFilms" class="d-flex m-2 p-2">
+
+                <img [src]="f.image" alt="" [routerLink] = "'filmDetails/' + f.film_id">
+    
+                <ul>
+                    <li>{{f.title}}</li>
+                    <li>{{f.length}}</li>
+                    <li>{{f.rating}}</li>
+                </ul>
+    
+            </div>
+
+            <div class="pagination">
+                <button class = "btn btn-outline-primary" id = "b-1" (click)="prevPage()" [disabled]="currentPage === 1"><i class="bi bi-arrow-left-circle"></i> Previous</button>
+                <button class = "btn btn-primary" id = "b-2" (click)="nextPage()" [disabled]="currentPage === totalPages">Next <i class="bi bi-arrow-right-circle"></i></button>
+            </div>
+        
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,42 @@
+<div id = "bg"></div>
+
+<div id = "body">
+
+  <div id = "content">
+
+    <div id = "navbar">
+
+      <app-navbar></app-navbar>
+  
+    </div>
+  
+    <div id = "carosello">
+
+      <h3>Newly Released</h3>
+  
+      <ul *ngFor = "let f of films" class = "text-center" class = "d-flex">
+        <img class = "w-25" [src]="f.image" alt="" [routerLink] = "'filmDetails/' + f.film_id">
+        <p>{{f.title}}</p>
+      </ul>
+  
+    </div>
+
+    <hr>
+
+    <div id = "footer">
+
+      <h3>Where to find us?</h3>
+      
+      <div id = "info">
+
+        <p>Address</p>
+        <p>Phone Number</p>
+        <p>Email</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

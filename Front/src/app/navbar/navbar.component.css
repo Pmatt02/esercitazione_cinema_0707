@@ -1,0 +1,23 @@
+button{
+    margin: 20px;
+    
+}
+
+#head {
+    text-align: center;
+    position: relative;
+}
+
+#logo{
+    display: inline-block;
+    /* border: 2px solid purple; */
+    transform: translateX(-70%);
+}
+
+#navbar{
+    display: inline-block;
+    /* border: 2px solid red; */
+    margin: 0 auto;
+    padding: 0 auto;
+    transform: translateX(-20%);
+}

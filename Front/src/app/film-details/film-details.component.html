@@ -1,0 +1,71 @@
+<div id = "bg"></div>
+
+<div id = "body">
+
+    <div id = "navbar">
+
+        <app-navbar></app-navbar>
+
+    </div>
+
+    <div class = "d-flex" >
+
+        <div id = "pic">
+
+            <div *ngIf = "film">
+        
+                <img [src] = "film.image" alt="" class = "w-75">
+            
+            </div>
+
+        </div>
+        
+        <div>
+
+            <div id = "plot">
+    
+                <div *ngIf = "film" >
+                    
+                    <h3>PLOT:</h3>
+                    <p>{{film.plot}}</p>
+                
+                </div>
+    
+            </div>
+        
+            <div id = "actors" >
+        
+                <h3>Actors:  </h3>
+        
+                <div *ngFor = "let fa of filmActors" class = "d-flex">
+            
+                    <p>{{fa.first_name}}</p>
+                    <p>{{fa.last_name}}</p>
+                
+                </div>
+        
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id = "screening">
+
+        <h3>SCREENING</h3>
+
+        <div class = "d-flex">
+
+            <div *ngFor = "let s of screening" id = "screen">
+            
+                <p>SCREENING ID: {{s.screening_id}}</p>
+                <p>SCREENING TIME: {{s.time | date: 'dd/MM/yyyy HH:mm'}}</p>
+                <p>FILM ID: {{s.film_id}}</p>
+                <p>IS IT BOOKABLE? {{s.is_bookable ? "si" : "no" }}</p>
+            </div>
+    
+        </div>
+
+    </div>
+
+</div>
